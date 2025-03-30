@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Archimex Technology</title>
+    <meta name="description" content="Browse our technology courses at Archimex">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-bold text-primary dark:text-accent">Archimex</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 dark:text-gray-400">Technology</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="courses.html" class="text-primary dark:text-accent font-semibold px-3 py-2 text-sm">Courses</a>
+                        <a href="blog.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Blog</a>
+                        <a href="about.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Auth Buttons -->
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
+                        <button id="theme-toggle" class="p-2 rounded-full text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <a href="login.html" class="px-4 py-2 text-sm font-medium text-primary dark:text-accent hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Login</a>
+                        <a href="signup.html" class="px-4 py-2 text-sm font-medium text-white bg-primary dark:bg-accent hover:bg-secondary dark:hover:bg-blue-500 rounded-md">Sign Up</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Courses Hero -->
+    <section class="bg-gradient-to-r from-primary to-secondary dark:from-gray-800 dark:to-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Courses</h1>
+                <p class="text-xl text-blue-100 dark:text-gray-300 max-w-3xl mx-auto">Master in-demand tech skills with our industry-relevant curriculum</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Course Categories -->
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 justify-center" id="category-filters">
+                <button data-category="all" class="px-4 py-2 bg-primary dark:bg-accent text-white rounded-full text-sm font-medium">All</button>
+                <button data-category="web" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-sm font-medium">Web Development</button>
+                <button data-category="data" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-sm font-medium">Data Science</button>
+                <button data-category="cyber" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-sm font-medium">Cybersecurity</button>
+                <button data-category="cloud" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-sm font-medium">Cloud Computing</button>
+                <button data-category="ai" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-sm font-medium">AI/ML</button>
+            </div>
+        </div>
+        
+        <!-- Course Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Course 1 -->
+            <a href="course-detail.html?course=web" class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition duration-300" data-category="web">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" alt="Web Development" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Bestseller</div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold text-primary dark:text-accent">Web Development</span>
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-sm font-medium">4.9</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Full Stack Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Master HTML, CSS, JavaScript and modern frameworks like React and Node.js</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-gray-500 dark:text-gray-400 mr-1"></i>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">8 Weeks</span>
+                        </div>
+                        <span class="text-lg font-bold">$299</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Course 2 -->
+            <a href="course-detail.html?course=data" class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition duration-300" data-category="data">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg" alt="Data Science" class="w-full h-48 object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold text-primary dark:text-accent">Data Science</span>
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-sm font-medium">4.8</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Data Science Fundamentals</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Learn Python, Pandas, NumPy and data visualization techniques</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-gray-500 dark:text-gray-400 mr-1"></i>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">10 Weeks</span>
+                        </div>
+                        <span class="text-lg font-bold">$349</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Course 3 -->
+            <a href="course-detail.html?course=cyber" class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition duration-300" data-category="cyber">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/60504/pexels-photo-60504.jpeg" alt="Cybersecurity" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">New</div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold text-primary dark:text-accent">Cybersecurity</span>
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-sm font-medium">4.7</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ethical Hacking</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Learn penetration testing and security best practices</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-gray-500 dark:text-gray-400 mr-1"></i>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">12 Weeks</span>
+                        </div>
+                        <span class="text-lg font-bold">$399</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Archimex Technology</h3>
+                    <p class="text-gray-400">Empowering the next generation of tech professionals through quality education.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="courses.html" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Science</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">AI/ML</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new courses and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-md text-white">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Archimex Technology. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Course category filtering
+        document.querySelectorAll('#category-filters button').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                
+                // Update active button styling
+                document.querySelectorAll('#category-filters button').forEach(btn => {
+                    if(btn === button) {
+                        btn.classList.remove('bg-gray-100', 'dark:bg-gray-800');
+                        btn.classList.add('bg-primary', 'dark:bg-accent', 'text-white');
+                    } else {
+                        btn.classList.add('bg-gray-100', 'dark:bg-gray-800');
+                        btn.classList.remove('bg-primary', 'dark:bg-accent', 'text-white');
+                    }
+                });
+
+                // Filter courses
+                document.querySelectorAll('.course-card').forEach(card => {
+                    if(category === 'all' || card.dataset.category === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
