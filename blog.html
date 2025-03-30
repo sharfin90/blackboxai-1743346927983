@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Archimex Technology</title>
+    <meta name="description" content="Latest tech insights and tutorials from Archimex Technology">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .article-card:hover .article-title {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Header (Same as index.html) -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-bold text-primary dark:text-accent">Archimex</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 dark:text-gray-400">Technology</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="courses.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Courses</a>
+                        <a href="blog.html" class="text-primary dark:text-accent font-semibold px-3 py-2 text-sm">Blog</a>
+                        <a href="about.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Auth Buttons -->
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
+                        <button id="theme-toggle" class="p-2 rounded-full text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <a href="login.html" class="px-4 py-2 text-sm font-medium text-primary dark:text-accent hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Login</a>
+                        <a href="signup.html" class="px-4 py-2 text-sm font-medium text-white bg-primary dark:bg-accent hover:bg-secondary dark:hover:bg-blue-500 rounded-md">Sign Up</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="bg-gradient-to-r from-primary to-secondary dark:from-gray-800 dark:to-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Archimex Blog</h1>
+                <p class="text-xl text-blue-100 dark:text-gray-300 max-w-3xl mx-auto">Insights, tutorials and latest trends in technology and education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Featured Article -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="lg:order-2">
+                        <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" alt="Featured Article" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 lg:order-1">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 dark:bg-gray-700 text-primary dark:text-accent text-xs font-semibold px-3 py-1 rounded-full">Featured</span>
+                            <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">June 15, 2023</span>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">The Future of AI in Education: Trends to Watch</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Explore how artificial intelligence is transforming learning experiences and what educators need to know about these emerging technologies.</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Author" class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <p class="text-sm font-medium">Dr. Michael Chen</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">AI Research Lead</p>
+                            </div>
+                        </div>
+                        <a href="blog-post.html" class="mt-6 inline-flex items-center text-primary dark:text-accent font-medium hover:underline">
+                            Read Article
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog Categories -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Browse by Category</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                <a href="#" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-center transition duration-300">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-robot text-primary dark:text-accent"></i>
+                    </div>
+                    <span class="text-sm font-medium">AI & ML</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-center transition duration-300">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-shield-alt text-primary dark:text-accent"></i>
+                    </div>
+                    <span class="text-sm font-medium">Cybersecurity</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-center transition duration-300">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-cloud text-primary dark:text-accent"></i>
+                    </div>
+                    <span class="text-sm font-medium">Cloud</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-center transition duration-300">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-database text-primary dark:text-accent"></i>
+                    </div>
+                    <span class="text-sm font-medium">Data Science</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-center transition duration-300">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-code text-primary dark:text-accent"></i>
+                    </div>
+                    <span class="text-sm font-medium">Development</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Articles Grid -->
+        <section>
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold">Latest Articles</h2>
+                <div class="relative">
+                    <select class="appearance-none bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md py-2 pl-3 pr-8 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                        <option>Most Recent</option>
+                        <option>Most Popular</option>
+                        <option>Editor's Picks</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <a href="blog-post.html" class="article-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 left-2 bg-white/90 dark:bg-gray-900/90 text-xs font-medium px-2 py-1 rounded">10 min read</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-primary dark:text-accent">AI & ML</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">May 28, 2023</span>
+                        </div>
+                        <h3 class="article-title text-xl font-bold mb-3 transition duration-300">How to Get Started with Machine Learning</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A beginner's guide to understanding and implementing your first ML model.</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                            <span class="text-sm font-medium">Sarah Williams</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 2 -->
+                <a href="blog-post.html" class="article-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 left-2 bg-white/90 dark:bg-gray-900/90 text-xs font-medium px-2 py-1 rounded">8 min read</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-primary dark:text-accent">Cybersecurity</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">May 15, 2023</span>
+                        </div>
+                        <h3 class="article-title text-xl font-bold mb-3 transition duration-300">Essential Cybersecurity Practices for Developers</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Protect your applications from common vulnerabilities with these best practices.</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                            <span class="text-sm font-medium">David Kim</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 3 -->
+                <a href="blog-post.html" class="article-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 left-2 bg-white/90 dark:bg-gray-900/90 text-xs font-medium px-2 py-1 rounded">12 min read</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-primary dark:text-accent">Cloud</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">May 5, 2023</span>
+                        </div>
+                        <h3 class="article-title text-xl font-bold mb-3 transition duration-300">Comparing AWS, Azure and GCP for Startups</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Which cloud platform offers the best value and features for your growing business?</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                            <span class="text-sm font-medium">James Rodriguez</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 4 -->
+                <a href="blog-post.html" class="article-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 left-2 bg-white/90 dark:bg-gray-900/90 text-xs font-medium px-2 py-1 rounded">15 min read</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-primary dark:text-accent">Data Science</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">April 22, 2023</span>
+                        </div>
+                        <h3 class="article-title text-xl font-bold mb-3 transition duration-300">Data Visualization Techniques for Better Insights</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Learn how to effectively communicate data findings through powerful visualizations.</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                            <span class="text-sm font-medium">Emily Chen</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 5 -->
+                <a href="blog-post.html" class="article-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 left-2 bg-white/90 dark:bg-gray-900/90 text-xs font-medium px-2 py-1 rounded">9 min read</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-primary dark:text-accent">DevOps</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">April 10, 2023</span>
+                        </div>
+                        <h3 class="article-title text-xl font-bold mb-3 transition duration-300">Implementing CI/CD Pipelines with GitHub Actions</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A step-by-step guide to automating your development workflow.</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                            <span class="text-sm font-medium">Robert Johnson</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 6 -->
+                <a href="blog-post.html" class="article-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 left-2 bg-white/90 dark:bg-gray-900/90 text-xs font-medium px-2 py-1 rounded">7 min read</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-primary dark:text-accent">Development</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">March 28, 2023</span>
+                        </div>
+                        <h3 class="article-title text-xl font-bold mb-3 transition duration-300">Modern JavaScript Features You Should Know</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Explore the latest ES2023 features that can improve your coding efficiency.</p>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                            <span class="text-sm font-medium">Lisa Wong</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-12 flex items-center justify-center">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-3 py-1 rounded-md bg-primary dark:bg-accent text-white">1</a>
+                    <a href="#" class="px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">2</a>
+                    <a href="#" class="px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">3</a>
+                    <a href="#" class="px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">4</a>
+                    <a href="#" class="px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Archimex Technology</h3>
+                    <p class="text-gray-400">Empowering the next generation of tech professionals through quality education.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="courses.html" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">DevOps Engineering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new courses and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-md text-white">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Archimex Technology. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
