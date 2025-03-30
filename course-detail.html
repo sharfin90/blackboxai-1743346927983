@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fundamentals | Archimex Technology</title>
+    <meta name="description" content="Learn AI fundamentals with Archimex Technology's professional course">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .progress-bar {
+            height: 6px;
+            background-color: #e5e7eb;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #3b82f6;
+            width: 65%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Header (Same as index.html) -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-bold text-primary dark:text-accent">Archimex</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 dark:text-gray-400">Technology</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="courses.html" class="text-primary dark:text-accent font-semibold px-3 py-2 text-sm">Courses</a>
+                        <a href="blog.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Blog</a>
+                        <a href="about.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Auth Buttons -->
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
+                        <button id="theme-toggle" class="p-2 rounded-full text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <a href="login.html" class="px-4 py-2 text-sm font-medium text-primary dark:text-accent hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Login</a>
+                        <a href="signup.html" class="px-4 py-2 text-sm font-medium text-white bg-primary dark:bg-accent hover:bg-secondary dark:hover:bg-blue-500 rounded-md">Sign Up</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="bg-gradient-to-r from-primary to-secondary dark:from-gray-800 dark:to-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start justify-between">
+                <div class="md:w-2/3">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-medium" id="course-category">Category</span>
+                        <div class="flex items-center ml-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-white" id="course-rating-header">0.0 (0 reviews)</span>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4" id="course-title">Course Title</h1>
+                    <p class="text-lg text-blue-100 dark:text-gray-300 mb-6" id="course-description">Course description will be loaded here.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-graduate mr-2"></i>
+                            <span>1,250 students</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>8 weeks</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-signal mr-2"></i>
+                            <span>Beginner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 mt-8 md:mt-0">
+                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold">$199</span>
+                            <span class="text-sm line-through text-gray-300">$299</span>
+                        </div>
+                        <p class="text-sm text-blue-100 dark:text-gray-300 mb-6">33% discount ends in 2 days</p>
+                        <a href="#" class="block w-full text-center bg-white text-primary font-medium py-3 px-4 rounded-lg hover:bg-gray-100 transition duration-300 mb-4">Enroll Now</a>
+                        <a href="#" class="block w-full text-center border-2 border-white text-white font-medium py-3 px-4 rounded-lg hover:bg-white hover:text-primary transition duration-300">Add to Wishlist</a>
+                        <div class="mt-4 pt-4 border-t border-white/20">
+                            <div class="flex items-center justify-between text-sm">
+                                <span>Includes:</span>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex items-center"><i class="fas fa-video mr-1"></i> 42h video</span>
+                                    <span class="flex items-center"><i class="fas fa-file-alt mr-1"></i> 18 articles</span>
+                                    <span class="flex items-center"><i class="fas fa-download mr-1"></i> 56 resources</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left Column -->
+            <div class="lg:w-2/3">
+                <!-- Course Tabs -->
+                <div class="border-b border-gray-200 dark:border-gray-700 mb-8">
+                    <nav class="flex space-x-8">
+                        <button class="py-4 px-1 border-b-2 font-medium text-sm border-primary text-primary dark:text-accent dark:border-accent">Overview</button>
+                        <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">Curriculum</button>
+                        <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">Instructor</button>
+                        <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">Reviews</button>
+                    </nav>
+                </div>
+                
+                <!-- Course Description -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4">About This Course</h2>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p>This comprehensive AI Fundamentals course is designed to take you from beginner to proficient in artificial intelligence concepts and applications. You'll learn the mathematical foundations, key algorithms, and practical implementations that power modern AI systems.</p>
+                        
+                        <h3 class="text-xl font-semibold mt-6">What You'll Learn</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Understand the core principles of artificial intelligence and machine learning</li>
+                            <li>Implement supervised and unsupervised learning algorithms</li>
+                            <li>Work with neural networks and deep learning frameworks</li>
+                            <li>Apply AI techniques to real-world problems</li>
+                            <li>Evaluate model performance and optimize results</li>
+                            <li>Navigate ethical considerations in AI development</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold mt-6">Course Requirements</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Basic programming knowledge (Python preferred)</li>
+                            <li>High school level mathematics</li>
+                            <li>No prior AI/ML experience required</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Course Features -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6">Course Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-primary dark:text-accent mr-4">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Certificate of Completion</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Earn a certificate recognized by industry leaders</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-primary dark:text-accent mr-4">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Hands-on Projects</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Build portfolio-worthy AI applications</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-primary dark:text-accent mr-4">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Q&A Support</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Get answers from instructors and TAs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-primary dark:text-accent mr-4">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Mobile Access</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Learn on the go with our mobile app</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sample Lecture -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6">Preview This Course</h2>
+                    <div class="aspect-w-16 aspect-h-9 bg-black rounded-xl overflow-hidden">
+                        <div class="w-full h-96 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-play-circle text-5xl text-primary dark:text-accent mb-2"></i>
+                                <p class="text-gray-600 dark:text-gray-300">Course Preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="lg:w-1/3">
+                <!-- Instructor Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-8">
+                    <h2 class="text-xl font-bold mb-4">Instructor</h2>
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Instructor" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold">Dr. Michael Chen</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">AI Research Lead at TechCorp</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-sm mb-4">
+                        <div class="flex items-center text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-gray-600 dark:text-gray-400">4.9/5.0</span>
+                        </div>
+                        <div class="text-gray-600 dark:text-gray-400">
+                            <i class="fas fa-user-graduate mr-1"></i> 12,540 students
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Dr. Chen has 15+ years of experience in AI research and development, with publications in top-tier conferences and patents in machine learning algorithms.</p>
+                    <button class="w-full py-2 border border-primary dark:border-accent text-primary dark:text-accent rounded-md hover:bg-blue-50 dark:hover:bg-gray-700 transition duration-300">View Profile</button>
+                </div>
+                
+                <!-- Course Progress -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-8">
+                    <h2 class="text-xl font-bold mb-4">Your Progress</h2>
+                    <div class="mb-2 flex justify-between text-sm">
+                        <span>65% Complete</span>
+                        <span>13/20 Lessons</span>
+                    </div>
+                    <div class="progress-bar rounded-full mb-4">
+                        <div class="progress-fill rounded-full"></div>
+                    </div>
+                    <button class="w-full py-2 bg-primary dark:bg-accent text-white rounded-md hover:bg-secondary dark:hover:bg-blue-500 transition duration-300">Continue Learning</button>
+                </div>
+                
+                <!-- Course Details -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h2 class="text-xl font-bold mb-4">Course Details</h2>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Duration</span>
+                            <span class="font-medium">8 weeks</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Effort</span>
+                            <span class="font-medium">6-8 hours/week</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Level</span>
+                            <span class="font-medium">Beginner</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Language</span>
+                            <span class="font-medium">English</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Certificate</span>
+                            <span class="font-medium text-primary dark:text-accent">Available</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Prerequisites</span>
+                            <span class="font-medium">Basic Python</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Archimex Technology</h3>
+                    <p class="text-gray-400">Empowering the next generation of tech professionals through quality education.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="courses.html" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">DevOps Engineering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new courses and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-md text-white">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Archimex Technology. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Course details loader
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('course');
+            
+            const courses = {
+                'web': {
+                    title: 'Full Stack Web Development',
+                    rating: 4.9,
+                    reviews: 1240,
+                    badge: 'Bestseller',
+                    description: 'Master the complete web development stack with this comprehensive course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB. By the end of this course, you\'ll be able to build full-fledged web applications from scratch and deploy them to production.'
+                },
+                'data': {
+                    title: 'Data Science Fundamentals',
+                    rating: 4.8,
+                    reviews: 890,
+                    badge: '',
+                    description: 'Learn Python, Pandas, NumPy and data visualization techniques. This course will take you from beginner to proficient in data analysis and machine learning fundamentals.'
+                },
+                'cyber': {
+                    title: 'Ethical Hacking',
+                    rating: 4.7,
+                    reviews: 650,
+                    badge: 'New',
+                    description: 'Learn penetration testing and security best practices. This hands-on course will teach you how to identify vulnerabilities and secure systems against cyber threats.'
+                }
+            };
+
+            const course = courses[courseId] || courses['web'];
+            
+            // Safely update course info if elements exist
+            const updateElement = (id, value) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            };
+
+            updateElement('course-title', course.title);
+            updateElement('course-rating-header', `${course.rating} (${course.reviews} reviews)`);
+            updateElement('course-category', course.category || 'Course');
+            
+            const badgeEl = document.getElementById('course-badge');
+            if (badgeEl) {
+                if (course.badge) {
+                    badgeEl.textContent = course.badge;
+                    badgeEl.style.display = 'inline-block';
+                } else {
+                    badgeEl.style.display = 'none';
+                }
+            }
+            
+            const descEl = document.getElementById('course-description');
+            if (descEl) {
+                descEl.innerHTML = `<p class="text-lg">${course.description}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
