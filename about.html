@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Archimex Technology</title>
+    <meta name="description" content="Learn about Archimex Technology's mission, team, and values">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .dark .timeline-item:not(:last-child):after {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Header (Same as index.html) -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-bold text-primary dark:text-accent">Archimex</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 dark:text-gray-400">Technology</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="courses.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Courses</a>
+                        <a href="blog.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Blog</a>
+                        <a href="about.html" class="text-primary dark:text-accent font-semibold px-3 py-2 text-sm">About</a>
+                        <a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-accent px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Auth Buttons -->
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
+                        <button id="theme-toggle" class="p-2 rounded-full text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <a href="login.html" class="px-4 py-2 text-sm font-medium text-primary dark:text-accent hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Login</a>
+                        <a href="signup.html" class="px-4 py-2 text-sm font-medium text-white bg-primary dark:bg-accent hover:bg-secondary dark:hover:bg-blue-500 rounded-md">Sign Up</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Hero -->
+    <section class="bg-gradient-to-r from-primary to-secondary dark:from-gray-800 dark:to-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">About Archimex Technology</h1>
+                <p class="text-xl text-blue-100 dark:text-gray-300 max-w-3xl mx-auto">Empowering the next generation of tech professionals through innovative education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Mission Section -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p class="text-lg mb-4">At Archimex Technology, we believe that quality tech education should be accessible to everyone, regardless of background or location. Our mission is to bridge the digital skills gap by providing comprehensive, industry-relevant training programs.</p>
+                        <p>We combine cutting-edge curriculum with hands-on projects and mentorship from industry experts to create learning experiences that translate directly to career success in the tech industry.</p>
+                    </div>
+                </div>
+                <div class="order-first lg:order-last">
+                    <img src="https://images.pexels.com/photos/3861437/pexels-photo-3861437.jpeg" alt="Our Mission" class="rounded-xl shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-12 text-center">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-primary dark:text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Innovation</h3>
+                    <p class="text-gray-600 dark:text-gray-400">We constantly evolve our curriculum to reflect the latest industry trends and technologies.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-primary dark:text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community</h3>
+                    <p class="text-gray-600 dark:text-gray-400">We foster a supportive network of learners, instructors, and industry partners.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-graduation-cap text-primary dark:text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Excellence</h3>
+                    <p class="text-gray-600 dark:text-gray-400">We maintain the highest standards in our curriculum, instruction, and student outcomes.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-12 text-center">Meet Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden text-center">
+                    <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">John Peterson</h3>
+                        <p class="text-sm text-primary dark:text-accent mb-3">CEO & Founder</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">15+ years in tech education and entrepreneurship</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden text-center">
+                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Sarah Johnson</h3>
+                        <p class="text-sm text-primary dark:text-accent mb-3">Chief Learning Officer</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Former Director of Education at Tech Academy</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden text-center">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Michael Chen</h3>
+                        <p class="text-sm text-primary dark:text-accent mb-3">Head of AI Curriculum</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">PhD in Computer Science, AI researcher</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden text-center">
+                    <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Emily Rodriguez</h3>
+                        <p class="text-sm text-primary dark:text-accent mb-3">Director of Student Success</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">10+ years in career counseling and mentorship</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-accent"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-12 text-center">Our Journey</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary dark:bg-accent border-4 border-blue-100 dark:border-gray-700"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Founded Archimex Technology</h3>
+                                <span class="text-sm bg-blue-100 dark:bg-gray-700 text-primary dark:text-accent px-3 py-1 rounded-full">2015</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">Launched with a single course in web development and a vision to make tech education more accessible.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary dark:bg-accent border-4 border-blue-100 dark:border-gray-700"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Expanded Course Catalog</h3>
+                                <span class="text-sm bg-blue-100 dark:bg-gray-700 text-primary dark:text-accent px-3 py-1 rounded-full">2017</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">Added AI, cybersecurity, and data science programs in response to growing industry demand.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary dark:bg-accent border-4 border-blue-100 dark:border-gray-700"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">10,000 Students Milestone</h3>
+                                <span class="text-sm bg-blue-100 dark:bg-gray-700 text-primary dark:text-accent px-3 py-1 rounded-full">2019</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">Reached our first major milestone with students from over 50 countries.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary dark:bg-accent border-4 border-blue-100 dark:border-gray-700"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Corporate Training Partnerships</h3>
+                                <span class="text-sm bg-blue-100 dark:bg-gray-700 text-primary dark:text-accent px-3 py-1 rounded-full">2021</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">Began offering customized training programs for Fortune 500 companies.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary dark:bg-accent border-4 border-blue-100 dark:border-gray-700"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">Global Learning Platform</h3>
+                                <span class="text-sm bg-blue-100 dark:bg-gray-700 text-primary dark:text-accent px-3 py-1 rounded-full">2023</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">Launched our next-generation learning platform with AI-powered personalization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="bg-gradient-to-r from-primary to-secondary dark:from-gray-800 dark:to-gray-900 text-white rounded-xl p-8 md:p-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold mb-2">25K+</p>
+                    <p class="text-blue-100 dark:text-gray-300">Students</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold mb-2">50+</p>
+                    <p class="text-blue-100 dark:text-gray-300">Countries</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold mb-2">95%</p>
+                    <p class="text-blue-100 dark:text-gray-300">Completion Rate</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold mb-2">4.9/5</p>
+                    <p class="text-blue-100 dark:text-gray-300">Average Rating</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Archimex Technology</h3>
+                    <p class="text-gray-400">Empowering the next generation of tech professionals through quality education.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="courses.html" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">DevOps Engineering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new courses and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-md text-white">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Archimex Technology. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
